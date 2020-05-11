@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <html lang="en-ca">
+    <head>
+      <meta charset="utf-8">
+      <meta name="description"content="Guess the random number.">
+      <meta name="keywords"content= "Random Number, 1 to 6.">
+      <meta name="author"content= "Jeanine Baltazar">
+      <meta name="viewport"content="width=device-width, initial-scale=1.0">
+      <title>Guess The Random Number</title>
+      <link rel="stylesheet" href="mystyle.css">
+      <script>
+        let myGuess;
+        let randomNumber;
+        function check() {
+          myGuess=document.game.guess.value;
+          if (myGuess==randomNumber) {
+            alert("Correct!");
+          } else {
+            alert("Incorrect! Try again!")
+          }
+        }
+        function start() {
+          randomNumber=Math.floor(Math.random() * 6) + 1;
+        }
+      </script>
+    </head>
+    <body onload="start()">
+      <form name="game">
+        <h1>Guess The Random Number</h1>
+        <p id="explination">
+          Hello, World! Let's guess the random number. This webpage will
+          generate a random number from 1 to 6 (no decimals). Try to
+          guess the number and type your guess in the "My Guess" input box.
+          Then, click the "Guess" button. If your answer is correct, the
+          webpage will say "Correct!". If not, it will say "Incorrect!".
+          You may guess as many times as you wish by simply changing your
+          answer in the "My Guess" box. Have fun!
+        </p>
+          <table>
+            <tr>
+              <td>
+                <p id="title">My Guess:</p>
+              </td>
+              <td>
+                <input type="text" name="guess" id="input">
+              </td>
+            </tr>
+          </table>
+          <input type="button" value="Guess!" onclick="check()" id="button">
+      </form>
+    </body>
+</html>
